@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "project": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "csvInstance": {
+                    "description": "The input features for this instance.",
+                    "items": {},
+                    "type": "array"
+                },
+                "output": {
+                    "description": "The generic output value - could be regression or class label.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

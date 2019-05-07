@@ -1,0 +1,87 @@
+{
+    "type": "object",
+    "properties": {
+        "project": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "id": {
+                    "description": "The unique name for the predictive model.",
+                    "type": "string"
+                },
+                "modelType": {
+                    "description": "Type of predictive model (classification or regression).",
+                    "type": "string"
+                },
+                "sourceModel": {
+                    "description": "The Id of the model to be copied over.",
+                    "type": "string"
+                },
+                "storageDataLocation": {
+                    "description": "Google storage location of the training data file.",
+                    "type": "string"
+                },
+                "storagePMMLLocation": {
+                    "description": "Google storage location of the preprocessing pmml file.",
+                    "type": "string"
+                },
+                "storagePMMLModelLocation": {
+                    "description": "Google storage location of the pmml model file.",
+                    "type": "string"
+                },
+                "trainingInstances": {
+                    "description": "Instances to train model on.",
+                    "items": {
+                        "properties": {
+                            "csvInstance": {
+                                "description": "The input features for this instance.",
+                                "items": {},
+                                "type": "array"
+                            },
+                            "output": {
+                                "description": "The generic output value - could be regression or class label.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "utility": {
+                    "description": "A class weighting function, which allows the importance weights for class labels to be specified (Categorical models only).",
+                    "items": {
+                        "additionalProperties": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "description": "Class label (string).",
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

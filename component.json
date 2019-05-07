@@ -1,0 +1,191 @@
+{
+    "title": "Prediction",
+    "description": "Lets you access a cloud hosted machine learning service that makes it easy to build smart apps",
+    "docsUrl": "https://developers.google.com/prediction/docs/developer-guide",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/prediction/v1.6/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/prediction/v1.6/projects",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 implicit authentication",
+                "viewClass": "OAuthFieldView"
+            },
+            "Oauth2c": {
+                "label": "Oauth 2.0 accessCode authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://accounts.google.com/o/oauth2/token"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "prediction_hostedmodels_predict": {
+            "main": "./lib/actions/prediction_hostedmodels_predict.js",
+            "title": "Submit input and request an output against a hosted model.",
+            "description": "Submit input and request an output against a hosted model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/prediction_hostedmodels_predict.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "prediction_trainedmodels_insert": {
+            "main": "./lib/actions/prediction_trainedmodels_insert.js",
+            "title": "Train a Prediction API model.",
+            "description": "Train a Prediction API model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/prediction_trainedmodels_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "prediction_trainedmodels_list": {
+            "main": "./lib/actions/prediction_trainedmodels_list.js",
+            "title": "List available models.",
+            "description": "List available models.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/prediction_trainedmodels_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "prediction_trainedmodels_delete": {
+            "main": "./lib/actions/prediction_trainedmodels_delete.js",
+            "title": "Delete a trained model.",
+            "description": "Delete a trained model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/prediction_trainedmodels_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "prediction_trainedmodels_get": {
+            "main": "./lib/actions/prediction_trainedmodels_get.js",
+            "title": "Check training status of your model.",
+            "description": "Check training status of your model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/prediction_trainedmodels_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "prediction_trainedmodels_update": {
+            "main": "./lib/actions/prediction_trainedmodels_update.js",
+            "title": "Add new data to a trained model.",
+            "description": "Add new data to a trained model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/prediction_trainedmodels_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "prediction_trainedmodels_analyze": {
+            "main": "./lib/actions/prediction_trainedmodels_analyze.js",
+            "title": "Get analysis of the model and the data the model was trained on.",
+            "description": "Get analysis of the model and the data the model was trained on.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/prediction_trainedmodels_analyze.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "prediction_trainedmodels_predict": {
+            "main": "./lib/actions/prediction_trainedmodels_predict.js",
+            "title": "Submit model id and request a prediction.",
+            "description": "Submit model id and request a prediction.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/prediction_trainedmodels_predict.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
