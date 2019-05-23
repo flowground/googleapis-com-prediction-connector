@@ -2376,7 +2376,7 @@
                 "description": "Oauth 2.0 implicit authentication",
                 "type": "oauth2",
                 "flows": {
-                    "implicit": {
+                    "authorizationCode": {
                         "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
                         "scopes": {
                             "https://www.googleapis.com/auth/cloud-platform": "View and manage your data across Google Cloud Platform services",
@@ -2384,7 +2384,8 @@
                             "https://www.googleapis.com/auth/devstorage.read_only": "View your data in Google Cloud Storage",
                             "https://www.googleapis.com/auth/devstorage.read_write": "Manage your data in Google Cloud Storage",
                             "https://www.googleapis.com/auth/prediction": "Manage your data in the Google Prediction API"
-                        }
+                        },
+                        "tokenUrl": "https://www.googleapis.com/oauth2/v4/token"
                     }
                 }
             },

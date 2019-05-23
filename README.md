@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the Prediction API (version v1.6).
 
 Generated from: https://api.apis.guru/v2/specs/googleapis.com/prediction/v1.6/swagger.json<br/>
-Generated at: 2019-05-07T17:41:52+03:00
+Generated at: 2019-05-23T12:13:33+03:00
 
 ## API Description
 
